@@ -43,3 +43,15 @@ function merge(a,b){
 
   return merged;
 }
+
+
+function mergeSort(array){
+  if (array.length === 1) {
+    return array;
+  } else if (array.length > 1) {
+    var splitArray = split(array);
+    var sorted1 = mergeSort(splitArray[0]);
+    var sorted2 = mergeSort(splitArray[1]);
+    return merge(sorted1, sorted2);
+  }
+}
